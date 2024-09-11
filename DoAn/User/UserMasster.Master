@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMasster.master.cs" Inherits="DoAn.User.UserMasster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Shop Hoa Tươi</title>
+    <link rel="stylesheet" type="text/css" href="~/Style/style.css">
+    <link rel="icon" href="~/Image/icon.png" type="image/png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript">
+
+</script>
+</head>
+<body>
+    <form id="MasterForm" runat="server">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-and-name">
+                <div class="logo">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logo2.png" />
+                </div>
+                <div class="store-name">
+                    <h1>SHOP HOA TƯƠI</h1>
+                    <p>
+                        Hộp hoa - Giỏ hoa - Bó hoa<br />
+                        Liên hệ: <b>0937447018</b>
+                    </p>
+                </div>
+            </div>
+            <div class="giaohang">
+                <p>
+                    <b>Miễn phí gửi hoa nội thành tận nơi 24/24</b><br />
+                    Quận 1, Quận 3, Quận 4, Quận 5, Quận 6, Quận 7, Quận 8, Quận 10, Quận 11, Quận 12,<br />
+                    Thủ Đức, Gò Vấp, Phú Nhuận
+                </p>
+            </div>
+            <div class="left">
+                <div id="giohang">
+                    <div class="soluonggiohang">
+                        <asp:Label ID="lbSoluong" runat="server" Text="0" Font-Size="X-Large"
+                            Font-Bold="True" ForeColor="red">
+                        </asp:Label>
+                    </div>
+                    <div class="hinhgiohang">
+                        <a href="giohang.aspx" id="hinhgiohang">
+                            <asp:Image ID="imgGiohang" runat="server" Height="70px"
+                                ImageUrl="~/Image/giohang.png" Width="100px" />
+                        </a>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <asp:TextBox ID="txtFind" runat="server" CssClass="textbox"></asp:TextBox>
+                    <asp:Button ID="btnfind" runat="server" Text="Tìm" CssClass="buttonFind" OnClick="btnfind_Click" />
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Nội dung -->
+        <div class="row">
+            <div class="side">
+                <h2>Danh mục sản phẩm</h2>
+                <asp:Menu ID="menuDanhMucSP" runat="server" StaticMenuStyle-CssClass="StaticMenu" OnMenuItemClick="menuDanhMucSP_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem Text="Bó hoa tươi" NavigateUrl="~/User/UserTimTheoDVT.aspx?value=BO"></asp:MenuItem>
+                        <asp:MenuItem Text="Hộp hoa tươi" Value="HOP" NavigateUrl="~/User/UserTimTheoDVT.aspx?value=HOP"></asp:MenuItem>
+                        <asp:MenuItem Text="Giỏ hoa tươi" Value="GIO" NavigateUrl="~/User/UserTimTheoDVT.aspx?value=GIO"></asp:MenuItem>
+                        <asp:MenuItem Text="Hoa lan hồ điệp" Value="LAN" NavigateUrl="~/User/UserTimTheoDVT.aspx?value=LAN"></asp:MenuItem>
+                        <asp:MenuItem Text="Cây xanh văn phòng" Value="VP" NavigateUrl="~/User/UserTimTheoDVT.aspx?value=VP"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+            <div class="main">
+                <!-- Navigation Bar -->
+                <div class="navbar">
+                    <a href="UserTrangChu.aspx">Trang chủ</a>  <a href="UserTimTheoLoaiSP.aspx?MaLoaiSP=SN">Hoa sinh nhật</a>  <a href="UserTimTheoLoaiSP.aspx?MaLoaiSP=SAP">Hoa sáp</a>  <a href="UserTimTheoLoaiSP.aspx?MaLoaiSP=CM">Hoa chúc mừng</a> <a href="UserTimTheoLoaiSP.aspx?MaLoaiSP=CB">Hoa chia buồn</a> <a href="UserTimTheoLoaiSP.aspx?MaLoaiSP=HC">Hoa cưới</a>
+                    <asp:HyperLink ID="hplUserInfor" runat="server" NavigateUrl="~/User/UserProfile.aspx"></asp:HyperLink><asp:LinkButton ID="lbtDangXuat" runat="server" OnClick="lbtDangXuat_Click">Đăng xuất</asp:LinkButton>
+                </div>
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="nd">
+                <h4>DANH SÁCH CỬA HÀNG MIỀN NAM</h4>
+                Bình Phước, Bình Dương, Đồng Nai, Tây Ninh, Bà Rịa - Vũng Tàu, Long An, Đồng Tháp, Tiền Giang, An Giang, Bến Tre, Vĩnh Long, Trà Vinh, Hậu Giang, Kiên Giang, Sóc Trăng, Bạc Liêu, Cà Mau, Cần Thơ<br />
+                <br />
+                <b>Hotline:</b>
+                19003189 (Call/Zalo/Viber)
+            </div>
+            <div class="nd">
+                <h4>DANH SÁCH CỬA HÀNG MIỀN TRUNG</h4>
+                Thanh Hoá, Nghệ An, Hà Tĩnh, Quảng Bình, Quảng Trị, Thừa Thiên - Huế, Kon Tum, Gia Lai, Đắc Lắc, Đắc Nông, Lâm Đồng, Đà Nẵng, Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Khánh Hoà, Ninh Thuận, Bình Thuận<br />
+                <br />
+                <b>Hotline:</b>
+                19003189 (Call/Zalo/Viber)
+            </div>
+            <div class="nd">
+                <h4>DANH SÁCH CỬA HÀNG MIỀN BẮC</h4>
+                Lào Cai, Yên Bái, Điện Biên, Hoà Bình, Lai Châu, Sơn La, Hà Giang, Cao Bằng, Bắc Kạn, Lạng Sơn, Tuyên Quang, Thái Nguyên, Phú Thọ, Bắc Giang, Quảng Ninh, Bắc Ninh, Hà Nam, Hà Nội, Hải Dương, Hải Phòng, Hưng Yên, Nam Định, Ninh Bình, Thái Bình, Vĩnh Phúc<br />
+
+                <b>Hotline:</b>
+                19003189 (Call/Zalo/Viber)
+            </div>
+        </div>
+    </form>
+</body>
+</html>

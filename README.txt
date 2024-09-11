@@ -1,0 +1,1 @@
+Attach cơ sở dữ liệu ShopHoa.mdf được lưu trong thư mục App_Data vào SQL Server để sử dụng website. Xin cảm ơn

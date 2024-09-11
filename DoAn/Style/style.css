@@ -1,0 +1,298 @@
+﻿* {
+    box-sizing: border-box;
+}
+/* Style the body */
+
+body {
+    font-family: Arial;
+    padding: 6px;
+    background: white;
+    margin: 0;
+}
+/* Header/logo Title */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #c7c1c1; /* Màu nền của header */
+    padding: 10px; /* Khoảng cách nội dung và viền header */
+}
+
+.logo-and-name {
+    display: flex;
+    align-items: center;
+}
+
+.store-name {
+    margin-left: 10px; /* Điều chỉnh khoảng cách giữa logo và tên cửa hàng */
+    color: #b33a3a;
+}
+
+    .store-name h1 {
+        font-size: 30px;
+    }
+
+    .store-name p {
+        font-size: 15px;
+    }
+
+
+.logo img {
+    max-height: 100px; /* Điều chỉnh kích thước hình ảnh logo */
+}
+
+.left {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .left .giohang {
+        float: right;
+        margin-top: 40px;
+    }
+
+        .left .giohang .hinhgiohang {
+            position: absolute;
+            z-index: 1;
+            top: 5px;
+            right: 5px;
+        }
+
+        .left .giohang .soluonggiohang {
+            position: absolute;
+            z-index: 2;
+            padding-top: 5px;
+            padding-right: 5px;
+            top: 5px;
+            right: 5px;
+        }
+
+    .left .search-bar {
+    }
+
+        .left .search-bar .textbox {
+            border: 1px solid #ccc; /* Điều chỉnh viền của ô tìm kiếm */
+            border-radius: 5px;
+            width: 300px;
+            height: 30px;
+        }
+
+        .left .search-bar .buttonFind {
+            background-color: #007bff; /* Màu nút tìm kiếm */
+            color: #fff; /* Màu chữ trên nút */
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-left: 5px; /* Tạo khoảng cách giữa ô tìm kiếm và nút */
+        }
+
+
+/* Định dạng navigation bar */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #b33a3a;
+}
+    /* Định dạng link điều hướng */
+
+    .navbar a {
+        color: #f2f2f2;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+        /* Thay đổi màu liên kết khi di chuột qua */
+
+        .navbar a:hover {
+            background-color: #db7093;
+            color: white;
+        }
+/* Column container */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Tạo hai cột không bằng nhau nằm cạnh nhau */ /* Sidebar/Cột trái */
+
+.side {
+    flex: 17%;
+    background-color: #f1f1f1;
+    color: #b33a3a;
+    padding: 15px;
+}
+/* Cột chính */
+
+.main {
+    flex: 83%;
+    background-color: white;
+    padding: 15px;
+}
+
+/* Footer */
+
+.footer {
+    padding: 10px;
+    background: #c9c9c9;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+    .footer .nd {
+        flex: 30%;
+    }
+
+/* Bố cục linh hoạt: các cột xếp chồng lên nhau thay vì cạnh nhau khi màn hình có chiều rộng dưới 600px */
+
+@media screen and (max-width: 600px) {
+    .row, .navbar {
+        flex-direction: column;
+    }
+}
+
+
+.list-item {
+    margin: 30px; /* Điều chỉnh khoảng cách dọc và ngang giữa các mục */
+    padding: 10px; /* Điều chỉnh khoảng cách giữa nội dung mục và viền mục */
+    border: 1px solid #f50b0b; /* Điều chỉnh viền của mục nếu cần */
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+    width: 200px;
+    height: 210px;
+    text-align: center;
+    /*    width: 30%;*/
+}
+
+    .list-item:hover {
+        background-color: #f0f0f0;
+    }
+
+.gia {
+    color: #e80909;
+    font-weight: bold;
+}
+
+.content {
+    width: 1000px;
+    text-align: center;
+    display: flex;
+}
+/*#HeaderContent{
+    height: 1000px;
+}*/
+
+.custom-image {
+    max-width: 150px; /* Độ rộng tối đa */
+    max-height: 150px; /* Chiều cao tối đa */
+}
+
+#menuDanhMucSP {
+    /*background-color: #a09c9c;*/
+    font-size: 16px;
+    font-weight: bold;
+}
+
+    /* Định dạng các mục menu */
+    #menuDanhMucSP ul li {
+        display: block;
+        margin: 20px;
+    }
+
+    /* Định dạng các liên kết trong menu */
+    #menuDanhMucSP a {
+        text-decoration: none;
+        color: #000000;
+        padding: 5px 10px;
+    }
+
+        /* Định dạng mục menu được chọn */
+        #menuDanhMucSP a.selected {
+            background-color: #a09c9c;
+            color: #fff;
+        }
+
+        #menuDanhMucSP a:hover {
+            background-color: #a09c9c;
+        }
+
+.CTSP {
+    font-size: x-large;
+    text-align: center;
+    margin: 10px;
+}
+
+.txtbox {
+    font-size: x-large;
+    margin: 10px;
+}
+
+.button {
+    width: 150px;
+    height: 30px;
+    border: solid;
+    background-color: #CC0000;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .button:hover {
+        background-color: #f24747;
+    }
+
+.textboxDK {
+    vertical-align: middle;
+}
+
+.DK {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+}
+
+.tieude {
+    flex: 20%
+}
+
+    .tieude h1 {
+        font-size: 50px;
+    }
+
+    .tieude p {
+        font-size: 25px;
+    }
+
+.error {
+    color: red;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.login-title {
+    color: #b33a3a;
+    padding: 15px;
+    font-weight: bold;
+    font-size: xx-large;
+    margin:10px;
+}
+
+.giaohang {
+    align-self: center;
+    margin-left: 10px; /* Điều chỉnh khoảng cách giữa logo và tên cửa hàng */
+    color: #b33a3a;
+    text-align: center;
+}
+
+    .giaohang p {
+        font-size: 20px;
+    }
